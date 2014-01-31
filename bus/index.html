@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="bus">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="css/build/main.css">
+  <script type="text/javascript" src="//use.typekit.net/gek4iqq.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <title>Bus</title>
+</head>
+<body>
+  <div ng-controller="Stops">
+    <div class="loading"></div>
+    <ul>
+      <li class="navigation">
+        <span class="back_to_stops" ng-click="goBack()"><span class="inner"></span></span>
+        <span class="reload" ng-click="reloadInfo()"><span class="inner"></span></span>
+      </li>
+    </ul>
+    <div id="view">
+      <div ng-view></div>
+    </div>
+  </div>
+
+  <script src="js/build/production.min.js"></script>
+
+</body>
+</html>

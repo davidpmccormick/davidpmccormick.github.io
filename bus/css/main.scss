@@ -1,0 +1,287 @@
+@import "compass/css3";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.loading {
+  position: fixed;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  background: url('../../assets/images/loading.gif') no-repeat center center;
+  display: none;
+  &.on {
+    display: block;
+  }
+}
+
+body {
+  font-family: "p22-underground";
+  color: #333;
+  font-size: 40px;
+  background: #eee;
+  font-weight: 300!important;
+}
+.search {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  top:-240px;
+  @include transition(top 0.2s ease);
+}
+
+.search.on {
+  top: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding-top: 52px;
+  @include transition(padding-top 0.2s ease);
+}
+
+.content.with-search {
+  padding-top: 240px;
+}
+
+ul {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #ccc;
+}
+li::before,
+li::after {
+  clear: both;
+  display: table;
+  content: '';
+}
+li .inner {
+  margin: 0 auto;
+}
+.number {
+  @include background(linear-gradient(top, #333, #222));
+  color: #eee;
+  @include box-shadow(0 0 5px rgba(30, 30, 30, 0.2));
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  float:right;
+  text-align: center;
+}
+
+.n,
+.e,
+.s,
+.w,
+.ne,
+.nw,
+.se,
+.sw {
+  width: 30px;
+  height: 30px;
+  background: url('../../assets/images/arrow.png') no-repeat center center;
+  background-size: contain;
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx){
+    background: url('../../assets/images/arrow@2x.png') no-repeat center center;
+    background-size: contain;
+  }
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.e {
+  @include transform(rotate(90deg));
+}
+
+.s {
+  @include transform(rotate(180deg));
+}
+
+.w {
+  @include transform(rotate(270deg));
+}
+
+.ne {
+  @include transform(rotate(45deg));
+}
+
+.nw {
+  @include transform(rotate(315deg));
+}
+
+.se {
+  @include transform(rotate(135deg));
+}
+
+.sw {
+  @include transform(rotate(225deg));
+}
+
+li:nth-child(odd).navigation {
+  padding: 10px 20px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #333;
+  @include background(linear-gradient(top, #555, #444));
+}
+.back_to_stops,
+.reload {
+  @include box-shadow(0 0 5px rgba(80,80,80,0.2));
+  cursor: pointer;
+  display: block;
+  padding: 5px;
+  color: #eee;
+  border-radius: 5px;
+  font-size: 12px;
+  .inner {
+    display: block;
+    width: 25px;
+    height: 20px;
+  }
+}
+
+.back_to_stops {
+  float: left;
+  margin-right: 5px;
+  @include background(linear-gradient(top, #cc0000, #aa0000));
+  .inner {
+    background: url('../../assets/images/back.png') no-repeat center center;
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx){
+      background: url('../../assets/images/back@2x.png') no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+
+.reload {
+  float: right;
+  @include background(linear-gradient(top, #333, #222));
+  .inner {
+    background: url('../../assets/images/reload.png') no-repeat center center;
+    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dppx){
+      background: url('../../assets/images/reload@2x.png') no-repeat center center;
+      background-size: contain;
+    }
+  }
+}
+
+.number .inner {
+  display: block;
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+
+.time {
+  padding-top: 15px;
+  float: left;
+}
+
+.relative {
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+
+li:nth-child(odd) {
+  @include background(linear-gradient(top, #eee, #e5e5e5));
+}
+
+li:nth-child(even) {
+  @include background(linear-gradient(top, #fff, #f5f5f5));
+}
+
+.outlet {
+  position: relative;
+  right: 0%;
+  @include transition(right 0.3s ease);
+  &.offscreen {
+    right: 100%;
+  }
+}
+
+.stop {
+  cursor: pointer;
+  .name {
+    font-size: 20px;
+    display: block;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+}
+
+.left {
+  float: left;
+  display: block;
+  width: 80%;
+}
+
+.right {
+  width: 20%;
+  float: right;
+  text-align: center;
+}
+
+.routes {
+  margin-top: 10px;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.route {
+  display: block;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-size:12px;
+  padding: 5px;
+  @include background(linear-gradient(top, #cc0000, #aa0000));
+  color: #eee;
+  border-radius: 3px;
+}
+
+.distance {
+  display: block;
+  line-height: 1.2;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.distance::before,
+.distance::after,
+.routes::before,
+.routes::after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
+
+.stop .towards {
+  color: #555;
+  display:block;
+  font-size:16px;
+}
+
+.stop .letter {
+  padding: 5px;
+}
