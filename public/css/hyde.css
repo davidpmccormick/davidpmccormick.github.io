@@ -54,15 +54,15 @@ body {
 }
 
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: "chaparral-pro", Georgia, Times, serif;
+  font-size: 18px;
   line-height: 1.5;
   color: #454441;
   background-color: #fff;
 }
-@media (min-width: 990px) {
+@media (min-width: 600px) {
   body {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 
@@ -113,7 +113,7 @@ abbr {
   display: inline-block;
   padding: 3px;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
   color: #555;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
   text-transform: uppercase;
@@ -280,7 +280,7 @@ a:focus {
     left: 0;
   }
   .masthead h1 {
-    font-size: 64px;
+    font-size: 40px;
   }
   .colophon {
     margin-top: 40px;
@@ -370,7 +370,7 @@ a:focus {
 .pagination {
   overflow: hidden; /* clearfix */
   margin-top: 40px;
-  font-weight: bold;
+  font-weight: 600;
   color: #ccc;
   text-align: center;
   border-top: 1px solid #eee;
