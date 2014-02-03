@@ -54,6 +54,7 @@ html {
  */
 
 .sidebar {
+  @include transition(width 0.7s ease);
   text-align: center;
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
@@ -77,6 +78,7 @@ html {
 
 /* About section */
 .sidebar-about h1 {
+  @include transition(font-size 0.7s ease);
   color: #fff;
   margin-top: 0;
   font-size: 3.25rem;
