@@ -1,9 +1,6 @@
-title:        Sumnoise
+title:        sumnoise
 url:          http://davidpmccormick.github.io
 version:      1.1.1
-author:
-  name:       'DMC'
-  email:      ''
 markdown:     rdiscount
 permalink:    pretty
 pygments:     true

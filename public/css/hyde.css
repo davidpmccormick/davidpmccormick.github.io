@@ -304,6 +304,7 @@ a:focus {
   }
   .container {
     width: 55%;
+    max-width: 780px;
     margin-left: 35%;
     margin-right: 10%;
   }
