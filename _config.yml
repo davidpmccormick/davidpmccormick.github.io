@@ -1,7 +1,16 @@
-title:        sumnoise
-url:          http://davidpmccormick.github.io
-version:      1.1.1
-markdown:     rdiscount
-permalink:    pretty
-pygments:     true
-paginate:     5
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            sumnoise
+
+
+paginate:         5
+
+author:
+  name: 'David McCormick'
+  email: 'david@sumnoise.com'

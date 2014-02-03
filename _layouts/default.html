@@ -3,16 +3,12 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="theme-base-0c">
 
-    <header class="masthead">
-      <div class="masthead-inner">
-        <h1><a href="{{site.url}}">{{site.title}}</a></h1>
-      </div>
-    </header>
+    {% include sidebar.html %}
 
     <div class="content container">
-      {{content}}
+      {{ content }}
     </div>
 
   </body>
