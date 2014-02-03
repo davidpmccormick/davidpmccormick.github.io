@@ -192,9 +192,9 @@ img {
   font-size: 20px;
   font-weight: 300;
 }
-@media (min-width: 990px) {
+@media (min-width: 600px) {
   .lead {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 
@@ -235,7 +235,6 @@ a:focus {
 /* Masthead content */
 .masthead h1 {
   margin-top: 0;
-  font-family: "Abril Fatface";
 }
 .masthead .lead {
   margin-bottom: 0;
@@ -258,7 +257,7 @@ a:focus {
 }
 
 /* Responsive masthead */
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .masthead-inner {
     padding: 40px;
   }
