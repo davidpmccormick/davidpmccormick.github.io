@@ -162,3 +162,64 @@ a.sidebar-nav-item:focus {
 .related-posts li a:hover {
   color: #75b5aa;
 }
+
+.blinky {
+  width: 27px;
+  height: 27px;
+  display: none;
+  position: fixed;
+  bottom: -8px;
+  background: url('/public/favicon.png') no-repeat center center;
+  @media (min-width: 74rem) {
+    display: block;
+    -webkit-animation: moveBlinky 10s linear infinite;
+    -moz-animation: moveBlinky 10s linear infinite;
+    -ms-animation: moveBlinky 10s linear infinite;
+    animation: moveBlinky 10s linear infinite;
+  }
+}
+
+@-webkit-keyframes moveBlinky {
+  0% {
+    -webkit-transform: translateX(0rem);
+  }
+  50% {
+    -webkit-transform: translateX(13rem);
+  }
+  100% {
+    -webkit-transform: translateX(0rem);
+  }
+}
+@-moz-keyframes moveBlinky {
+  0% {
+    -moz-transform: translateX(0rem);
+  }
+  50% {
+    -moz-transform: translateX(13rem);
+  }
+  100% {
+    -moz-transform: translateX(0rem);
+  }
+}
+@-ms-keyframes moveBlinky {
+  0% {
+    -ms-transform: translateX(0rem);
+  }
+  50% {
+    -ms-transform: translateX(13rem);
+  }
+  100% {
+    -ms-transform: translateX(0rem);
+  }
+}
+@keyframes moveBlinky {
+  0% {
+    transform: translateX(0rem);
+  }
+  50% {
+    transform: translateX(13rem);
+  }
+  100% {
+   transform: translateX(0rem);
+  }
+}
