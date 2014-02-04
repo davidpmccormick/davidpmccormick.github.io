@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Blogging with Jekyll
-tags: [one, two, third one with spaces, four]
 ---
 
 I've decided to get rid of sumnoise.com as it was; in its place, I'm going to try to keep a blog, documenting anything I've learned/am struggling with in the world of front-end development.
