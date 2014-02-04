@@ -1,5 +1,4 @@
 require 'animation'
-@import "animation";
 
 preferred_syntax = :sass
 http_path = '/'
