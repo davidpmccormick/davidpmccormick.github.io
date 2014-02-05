@@ -95,6 +95,8 @@ html {
   color: #fff;
   margin-top: 0;
   font-size: 3.25rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Sidebar nav */
@@ -123,7 +125,7 @@ a.sidebar-nav-item:focus {
   .sidebar-sticky {
     position: absolute;
     right:  1rem;
-    bottom: 1rem;
+    bottom: 0;
     left:   1rem;
   }
 }
@@ -162,40 +164,30 @@ a.sidebar-nav-item:focus {
 }
 
 .icon-blinky {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   position: absolute;
-  bottom: -15px;
-  right: -7px;
+  bottom: -34px;
+  right: -14px;
+  z-index: 0;
+  @include transition(opacity 0.7s ease-in-out);
   @include transform(scaleX(-1));
   background-size: contain;
   @media (min-width: 48rem) {
-    top: -15px;
-    left: -7px;
+    width: 150px;
+    height: 150px;
+    top: -50px;
+    left: -20px;
     @include transform(rotate(180deg) scaleX(-1));
     position: fixed;
   }
   @media (min-width: 74rem) {
-    width: 27px;
-    height: 27px;
-    bottom: -8px;
-    left: 2em;
+    @include opacity(0.1);
+    @include transform(rotate(0));
+    width: 500px;
+    height: 500px;
+    bottom: -85px;
+    left: -7px;
     top: inherit;
-    @include animation(moveBlinky 10s linear infinite);
-  }
-}
-
-@include keyframes(moveBlinky) {
-  0% {
-    @include transform(translateX(0rem) scaleX(1));
-  }
-  50% {
-    @include transform(translateX(12rem) scaleX(1));
-  }
-  50.1% {
-    @include transform(translateX(12rem) scaleX(-1));
-  }
-  100% {
-    @include transform(translateX(0rem) scaleX(-1));
   }
 }
