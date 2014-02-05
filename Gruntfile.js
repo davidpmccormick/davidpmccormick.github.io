@@ -15,6 +15,19 @@ module.exports = function(grunt) {
         }
       },
 
+      grunticon: {
+        dmcIcons: {
+          files: [{
+            expand: true,
+            cwd: 'public/assets/images/source',
+            src: ['*.svg', '*.png'],
+            dest: "public/assets/images/output"
+          }],
+          options: {
+          }
+        }
+      },
+
       compass: {
         dist: {
           options: {
@@ -46,7 +59,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-grunticon');
 
-    grunt.registerTask('default', ['sass', 'compass', 'watch']);
+    grunt.registerTask('default', ['sass', 'compass', 'grunticon:dmcIcons', 'watch']);
 
   };
