@@ -57,7 +57,7 @@ html {
     padding: 20px;
   }
   color: rgba(255,255,255,.5);
-  background-color: #75b5aa;
+  background-color: $themecolour;
   position: relative;
   overflow: hidden;
   @include transition(padding 0.5s ease);
@@ -170,7 +170,21 @@ a.sidebar-nav-item:focus {
 
 .content a,
 .related-posts li a:hover {
-  color: #75b5aa;
+  color: $themecolour;
+}
+
+.newer,
+.older {
+  &::before {
+    display: inline-block;
+    content: '➔';
+  }
+}
+
+.older {
+  &::before {
+    @include transform(rotate(180deg));
+  }
 }
 
 .icon-blinky {

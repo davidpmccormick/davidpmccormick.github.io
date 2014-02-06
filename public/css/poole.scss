@@ -69,6 +69,8 @@ body {
 a {
   color: #268bd2;
   text-decoration: none;
+  @include transition(background 0.7s ease-in-out);
+
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
@@ -371,14 +373,19 @@ tbody tr:nth-child(odd) th {
   display: block;
   padding: 1rem;
   border: 1px solid #eee;
+  background: $themecolour;
+  color: #ffffff;
 }
 .pagination-item:first-child {
   margin-bottom: -1px;
 }
 
 /* Only provide a hover state for linked pagination items */
-a.pagination-item:hover {
-  background-color: #f5f5f5;
+.content a.pagination-item {
+  color: #ffffff;
+  &:hover {
+    background: lighten($themecolour, 10%);
+  }
 }
 
 @media (min-width: 30rem) {
