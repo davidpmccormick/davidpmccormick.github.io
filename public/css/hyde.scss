@@ -34,7 +34,7 @@
 html {
   font-family: "chaparral-pro", Georgia, Times, serif;
   font-size: 18px;
-  @media(min-width: 48rem) {
+  @media (min-width: 48rem) {
     font-size: 20px;
   }
   @media (min-width: 58rem) {
@@ -53,6 +53,9 @@ html {
   @include transition(width 0.7s ease);
   text-align: center;
   padding: 1rem 1rem;
+  .lt-ie9 & {
+    padding: 20px;
+  }
   color: rgba(255,255,255,.5);
   background-color: #75b5aa;
   position: relative;
@@ -144,6 +147,9 @@ a.sidebar-nav-item:focus {
 .content {
   padding-top:    4rem;
   padding-bottom: 4rem;
+  .lt-ie9 & {
+    padding: 20px;
+  }
   @include transition(margin-left 0.5s ease);
 }
 
