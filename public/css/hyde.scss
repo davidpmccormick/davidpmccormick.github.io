@@ -192,12 +192,13 @@ a.sidebar-nav-item:focus {
     position: fixed;
   }
   @media (min-width: 74rem) {
+    position: absolute;
     @include opacity(0.1);
     @include transform(rotate(0));
     width: 500px;
     height: 500px;
     bottom: -85px;
-    left: -7px;
+    left: -25px;
     top: inherit;
   }
 }
