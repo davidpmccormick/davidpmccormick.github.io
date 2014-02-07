@@ -32,8 +32,8 @@
  */
 
 html {
-  font-family: "chaparral-pro", Georgia, Times, serif;
   font-size: 18px;
+  font-family: "chaparral-pro", Georgia, Times, serif;
   @media (min-width: 48rem) {
     font-size: 22px;
   }
@@ -47,28 +47,27 @@ html {
  */
 
 .sidebar {
-  @include transition(width 0.7s ease);
-  text-align: center;
+  @include transition(width 0.7s ease, padding 0.5s ease);
+  position: relative;
+  overflow: hidden;
   padding: 1rem 1rem;
+  background-color: $themecolour;
+  color: rgba(255,255,255,.5);
+  text-align: center;
   .lt-ie9 & {
     padding: 20px;
   }
-  color: rgba(255,255,255,.5);
-  background-color: $themecolour;
-  position: relative;
-  overflow: hidden;
   h1 {
     line-height: 1;
   }
-  @include transition(padding 0.5s ease);
   @media (min-width: 32rem) {
     padding: 2rem 1rem;
   }
   @media (min-width: 48rem) {
     position: fixed;
     top: 0;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 7rem;
     text-align: left;
   }
@@ -87,15 +86,19 @@ html {
 
 /* About section */
 .sidebar-about h1 {
-  color: #fff;
-  margin-top: 0;
-  font-size: 3.25rem;
   position: relative;
   z-index: 1;
+  margin-top: 0;
+  color: #fff;
+  font-size: 3.25rem;
+  a {
+    display: block;
+  }
 }
 
 /* Sidebar nav */
 .sidebar-nav {
+  margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
@@ -133,20 +136,20 @@ a.sidebar-nav-item:focus {
  */
 
 .content {
+  @include transition(margin-left 0.5s ease);
   padding-top:    4rem;
   padding-bottom: 4rem;
   .lt-ie9 & {
     padding: 20px;
   }
-  @include transition(margin-left 0.5s ease);
   @media (min-width: 48rem) {
-    max-width: 38rem;
-    margin-left: 9rem;
     margin-right: 2rem;
+    margin-left: 9rem;
+    max-width: 38rem;
   }
   @media (min-width: 74rem) {
-    margin-left: 19.5rem;
     margin-right: 4rem;
+    margin-left: 19.5rem;
   }
 }
 
@@ -171,12 +174,12 @@ a.sidebar-nav-item:focus {
 
 .icon-sumnoise {
   display: block;
+  margin: 0 auto;
   width: 14rem;
   text-indent: -9999px;
   .lt-ie9 & {
     text-indent: 0;
   }
-  margin: 0 auto;
   @media (min-width: 32rem) {
     width: 20rem;
   }
@@ -184,43 +187,43 @@ a.sidebar-nav-item:focus {
     @include transform(rotate(-90deg) translate(194px, -190px));
   }
   @media (min-width: 74rem) {
-    width: 13rem;
     @include transform(rotate(0deg));
+    width: 13rem;
   }
 }
 
 .icon-blinky {
-  width: 50px;
-  height: 50px;
-  bottom: -20px;
-  right: -12px;
-  @media (min-width: 32rem) {
-    width: 100px;
-    height: 100px;
-    bottom: -34px;
-    right: -14px;
-  }
-  position: absolute;
-  z-index: 0;
   @include transition(opacity 0.7s ease-in-out);
   @include transform(scaleX(-1));
+  position: absolute;
+  right: -12px;
+  bottom: -20px;
+  z-index: 0;
+  width: 50px;
+  height: 50px;
   background-size: contain;
+  @media (min-width: 32rem) {
+    right: -14px;
+    bottom: -34px;
+    width: 100px;
+    height: 100px;
+  }
   @media (min-width: 48rem) {
-    width: 150px;
-    height: 150px;
-    top: -50px;
-    left: -20px;
     @include transform(rotate(180deg) scaleX(-1));
     position: fixed;
+    top: -50px;
+    left: -20px;
+    width: 150px;
+    height: 150px;
   }
   @media (min-width: 74rem) {
-    position: absolute;
     @include opacity(0.1);
     @include transform(rotate(0));
-    width: 500px;
-    height: 500px;
+    position: absolute;
+    top: inherit;
     bottom: -85px;
     left: -25px;
-    top: inherit;
+    width: 500px;
+    height: 500px;
   }
 }
