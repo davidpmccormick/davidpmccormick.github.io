@@ -182,9 +182,6 @@ a.sidebar-nav-item:focus {
   display: block;
   width: 14rem;
   text-indent: -9999px;
-  .lt-ie9 & {
-    text-indent: 0;
-  }
   margin: 0 auto;
   @media (min-width: 32rem) {
     width: 20rem;
@@ -199,6 +196,10 @@ a.sidebar-nav-item:focus {
     width: 13rem;
     @include transform(rotate(0deg));
   }
+}
+
+.lt-ie9 .icon-sumnoise {
+  text-indent: 0;
 }
 
 .icon-blinky {
