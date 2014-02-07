@@ -60,35 +60,27 @@ html {
   background-color: $themecolour;
   position: relative;
   overflow: hidden;
+  h1 {
+    line-height: 1;
+  }
   @include transition(padding 0.5s ease);
   @media (min-width: 32rem) {
     padding: 2rem 1rem;
   }
-}
-@media (min-width: 48rem) {
-  .sidebar {
+  @media (min-width: 48rem) {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     width: 7rem;
     text-align: left;
-    a {
-      display: block;
-      @include transform(rotate(-90deg));
-      @include transition(transform 0.7s ease);
-    }
+  }
+  @media(min-width: 74rem) {
+    width: 17.5rem;
   }
 }
 
-@media (min-width: 74rem) {
-  .sidebar {
-    width: 17.5rem;
-    a {
-      @include transform(rotate(0deg));
-    }
-  }
-}
+
 
 /* Sidebar links */
 .sidebar a {
@@ -98,7 +90,6 @@ html {
 
 /* About section */
 .sidebar-about h1 {
-  @include transition(font-size 0.7s ease);
   color: #fff;
   margin-top: 0;
   font-size: 3.25rem;
@@ -184,6 +175,26 @@ a.sidebar-nav-item:focus {
 .older {
   &::before {
     @include transform(rotate(180deg));
+  }
+}
+
+.icon-sumnoise {
+  display: block;
+  width: 14rem;
+  text-indent: -9999px;
+  margin: 0 auto;
+  @media (min-width: 32rem) {
+    width: 20rem;
+  }
+  @media (min-width: 48rem) {
+    @include transform(rotate(-90deg) translate(194px, -173px));
+  }
+  @media (min-width: 58rem) {
+    @include transform(rotate(-90deg) translate(194px, -190px));
+  }
+  @media (min-width: 74rem) {
+    width: 13rem;
+    @include transform(rotate(0deg));
   }
 }
 
