@@ -94,6 +94,9 @@ html {
   a {
     display: block;
   }
+  @media (min-width: 48rem) {
+    margin-bottom: 20px;
+  }
 }
 
 /* Sidebar nav */
