@@ -35,9 +35,6 @@ html {
   font-family: "chaparral-pro", Georgia, Times, serif;
   font-size: 18px;
   @media (min-width: 48rem) {
-    font-size: 20px;
-  }
-  @media (min-width: 58rem) {
     font-size: 22px;
   }
 }
@@ -142,18 +139,12 @@ a.sidebar-nav-item:focus {
     padding: 20px;
   }
   @include transition(margin-left 0.5s ease);
-}
-
-@media (min-width: 48rem) {
-  .content {
+  @media (min-width: 48rem) {
     max-width: 38rem;
     margin-left: 9rem;
     margin-right: 2rem;
   }
-}
-
-@media (min-width: 74rem) {
-  .content {
+  @media (min-width: 74rem) {
     margin-left: 19.5rem;
     margin-right: 4rem;
   }
@@ -190,9 +181,6 @@ a.sidebar-nav-item:focus {
     width: 20rem;
   }
   @media (min-width: 48rem) {
-    @include transform(rotate(-90deg) translate(194px, -173px));
-  }
-  @media (min-width: 58rem) {
     @include transform(rotate(-90deg) translate(194px, -190px));
   }
   @media (min-width: 74rem) {
