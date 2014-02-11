@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Transitioning CSS3 linear gradients
+title: Transitioning background-image gradients
 ---
 
-It turns out that you can't transition CSS3 linear-gradients. A simple hack is to have a linear-gradient as a semi-transparent mask, and transition the `background-color` property instead.
+It turns out that you can't transition the CSS background-image property between two gradients. A simple hack is to set a gradient as a semi-transparent mask, and transition the `background-color` property instead.
 
 Using Compass, this looks something like:
 
