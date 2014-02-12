@@ -21,7 +21,7 @@ Using sass, this looks something like:
   );
 
   &.btn-primary {
-    background-color: darken(#ccc, -10%);
+    background-color: darken(#ccc, 10%);
 
     &:hover {
       background-color: lighten(#ccc, 10%);
