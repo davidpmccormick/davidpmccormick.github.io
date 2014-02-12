@@ -3,7 +3,7 @@ layout: post
 title: Transitioning background-image gradients
 ---
 
-It turns out that you can't transition the CSS background-image property between two gradients. A simple hack is to set a gradient as a semi-transparent mask, and transition the `background-color` property instead.
+It turns out that you can't transition the CSS background-image property between two gradients. A simple workaraound is to set a background-image gradient as a semi-transparent mask, and transition the `background-color` property instead.
 
 Using Compass, this looks something like:
 
@@ -24,7 +24,7 @@ Using Compass, this looks something like:
     background-color: adjust-lightness(#ccc, -10%);
 
     &:hover {
-      background-color: adject-lightness(#ccc, 10%);
+      background-color: adjust-lightness(#ccc, 10%);
     }
   }
 {% endhighlight %}
