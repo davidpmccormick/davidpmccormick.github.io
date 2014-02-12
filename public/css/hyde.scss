@@ -140,7 +140,7 @@ a.sidebar-nav-item:focus {
 
 .content {
   @include transition(margin-left 0.5s ease);
-  padding-top:    4rem;
+  padding-top:    2rem;
   padding-bottom: 4rem;
   .lt-ie9 & {
     padding: 20px;
