@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Squash commits
+title: Squash merging
 ---
 
 1. Create a new branch from master: `git checkout -b ugly_commits_branch`
