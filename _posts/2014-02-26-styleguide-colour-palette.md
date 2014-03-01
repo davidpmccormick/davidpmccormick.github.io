@@ -7,7 +7,7 @@ title: Generating a styleguide colour palette
 
 With Sass lists, you can target individual list items using `nth($list, $index)`, so if you have a list `$colour-name: colour-string #base-colour-hex #light-tint-hex #dark-tint-hex`, you can get light-tint of the colour with `nth($colour-name, 3)` (lists are indexed from one, not zero).
 
-In [this post](http://scriptogr.am/jimniels/post/workarounds-to-variable-interpolation-in-sass) Jim Nielsen explains the principle behind creating two separate lists; one for the name, and one for the hex value. Provided the index of the items in the two lists lines up, you can create a function that takes the colour name as an argument and, based on its index in the colour name list, will return the corresponding hex code in the colour values list.
+In [this post](http://scriptogr.am/jimniels/post/workarounds-to-variable-interpolation-in-sass) Jim Nielsen explains the principle behind creating two separate lists; one for the name, and one for the hex value. Provided the indices of the items in the two lists line up, you can create a function that takes the colour name as an argument and, based on its index in the colour name list, returns the corresponding hex code in the colour values list.
 
 This is cool, but it necessitates the maintenance of two lists, manually.
 
