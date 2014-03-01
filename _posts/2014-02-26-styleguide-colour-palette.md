@@ -5,7 +5,7 @@ title: Generating a styleguide colour palette
 
 <p class="lead">In order to be able to output brand palette colours to a styleguide without then having to duplicate Sass variables for use in production, you can create a list of lists and a lookup function. This solves the problem of not being able to dynamically create variables with interpolation.</p>
 
-You can target individual list items using `nth($list, $index)`, so if you have a list `$colour-name: colour-string #base-colour-hex #light-tint-hex #dark-tint-hex`, you can get light-tint of the colour with `nth($colour-name, 3)` (lists are indexed from one, not zero).
+With Sass lists, you can target individual list items using `nth($list, $index)`, so if you have a list `$colour-name: colour-string #base-colour-hex #light-tint-hex #dark-tint-hex`, you can get light-tint of the colour with `nth($colour-name, 3)` (lists are indexed from one, not zero).
 
 In [this post](http://scriptogr.am/jimniels/post/workarounds-to-variable-interpolation-in-sass) Jim Nielsen explains the principle behind creating two separate lists; one for the name, and one for the hex value. Provided the index of the items in the two lists lines up, you can create a function that takes the colour name as an argument and, based on its index in the colour name list, will return the corresponding hex code in the colour values list.
 
