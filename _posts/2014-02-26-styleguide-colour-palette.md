@@ -13,9 +13,14 @@ This is cool, but it necessitates the maintenance of two lists, manually.
 
 Instead, I make and maintain just the one list-of-lists, then use Sass itself to generate the individual lists it needs in order to perform the lookup.
 
-Once this is set up, I can get any colour(+variant) by calling the function: `background: brandcolour(graphite, dark);`.
+Once this is set up, I can get any of the brand colours (and tints) set to a property's value by calling the `brandcolour()` function, e.g. `background: brandcolour(graphite, dark);`.
 
-As a bonus, I can save each of the colour names in a pseudo element's `content` property, then automatically generate the styleguide colour block classes and load them onto the page using JavaScript.
+Using an `@each` loop, I create a list of classes and subclasses that contain information about each colour in the palette. Each of these classes has the colour's name (e.g. `primary-red`) as a suffix.
+
+Using another `@each` loop, I add each colour name to a list that is contained in the `body:before` pseudo-element's `content` property.
+
+Finally, I use JavaScript to read each value from the `body:before` list (`var colour_list = (window.getComputedStyle(document.body, ':before')).content;`) and generate an element for each of the colour blocks I defined using the `@each` loop above.
+
 
 
 ### Sass
@@ -94,9 +99,6 @@ body:before {
 }
 
 .styleguide__colour-block {
-  font-family: futura, helvetica, arial, sans;
-  font-size: 11px;
-  text-transform: uppercase;
   float: left;
   margin: 0 20px 20px 0;
   width: 200px;
@@ -148,8 +150,8 @@ body:before {
 
 {% highlight js %}
 $(function() {
-  colour_list = (window.getComputedStyle(document.body, ':before')).content;
-  colour_array = (colour_list.substring(1, colour_list.length-1)).split(' ');
+  var colour_list = (window.getComputedStyle(document.body, ':before')).content;
+  var colour_array = (colour_list.substring(1, colour_list.length-1)).split(' ');
   $.each(colour_array, function(index, value) {
     $('body').append('\
       <div class="styleguide__colour-block">\
