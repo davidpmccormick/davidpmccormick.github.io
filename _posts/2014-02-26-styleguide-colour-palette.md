@@ -3,19 +3,24 @@ layout: post
 title: Generating a styleguide colour palette
 ---
 
-In order to be able to output brand palette colours to a styleguide without then having to duplicate Sass variables for use in production, you can create a list of lists and a lookup function.
+<p class="lead">In order to be able to output brand palette colours to a styleguide without then having to duplicate Sass variables for use in production, you can create a list of lists and a lookup function. This technique allows you to circumvent the absence of variable interpolation in Sass.</p>
 
-You can target individual list items using `nth($list, $index)`, so if you have a list `$colour-name: colour-string #base-colour-hex #light-tint-hex #dark-tint-hex`, you can get light-tint of the colour with `nth($colour-name, 3)` (lists are indexed from one, not zero).
+With Sass lists, you can target individual list items using `nth($list, $index)`, so if you have a list `$colour-name: colour-string #base-colour-hex #light-tint-hex #dark-tint-hex`, you can get light-tint of the colour with `nth($colour-name, 3)` (lists are indexed from one, not zero).
 
-In [this post](http://scriptogr.am/jimniels/post/workarounds-to-variable-interpolation-in-sass) Jim Nielsen explains the principle behind creating two separate lists; one for the name, and one for the hex value. Provided the index of the items in the two lists lines up, you can create a function that takes the colour name as an argument and, based on its index in the colour name list, will return the corresponding hex code in the colour values list.
+In [this post](http://scriptogr.am/jimniels/post/workarounds-to-variable-interpolation-in-sass) Jim Nielsen explains the principle behind creating two separate lists; one for the name, and one for the hex value. Provided the indices of the items in the two lists line up, you can create a function that takes the colour name as an argument and, based on its index in the colour name list, returns the corresponding hex code in the colour values list.
 
 This is cool, but it necessitates the maintenance of two lists, manually.
 
 Instead, I make and maintain just the one list-of-lists, then use Sass itself to generate the individual lists it needs in order to perform the lookup.
 
-Once this is set up, I can get any colour(+variant) by calling the function: `background: brandcolour(graphite, dark);`.
+Once this is set up, I can get any of the brand colours (and tints) set to a property's value by calling the `brandcolour()` function, e.g. `background: brandcolour(graphite, dark);`.
 
-As a bonus, I can save each of the colour names in a pseudo element's `content` property, then automatically generate the styleguide colour block classes and load them onto the page using JavaScript.
+Using an `@each` loop, I create a list of classes and subclasses that contain information about each colour in the palette. Each of these classes has the colour's name (e.g. `primary-red`) as a suffix.
+
+Using another `@each` loop, I add each colour name to a list that is contained in the `body:before` pseudo-element's `content` property.
+
+Finally, I use JavaScript to read each value from the `body:before` list (`var colour_list = (window.getComputedStyle(document.body, ':before')).content;`) and generate an element for each of the colour blocks I defined using the `@each` loop above.
+
 
 
 ### Sass
@@ -94,9 +99,6 @@ body:before {
 }
 
 .styleguide__colour-block {
-  font-family: futura, helvetica, arial, sans;
-  font-size: 11px;
-  text-transform: uppercase;
   float: left;
   margin: 0 20px 20px 0;
   width: 200px;
@@ -148,8 +150,8 @@ body:before {
 
 {% highlight js %}
 $(function() {
-  colour_list = (window.getComputedStyle(document.body, ':before')).content;
-  colour_array = (colour_list.substring(1, colour_list.length-1)).split(' ');
+  var colour_list = (window.getComputedStyle(document.body, ':before')).content;
+  var colour_array = (colour_list.substring(1, colour_list.length-1)).split(' ');
   $.each(colour_array, function(index, value) {
     $('body').append('\
       <div class="styleguide__colour-block">\
