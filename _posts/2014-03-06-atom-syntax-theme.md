@@ -1,9 +1,9 @@
->---
+---
 layout: post
 title: Atom syntax theme
 ---
 
-What better way to spend a day of convalescence than converting a syntax highlighting theme from Sublime Text to Atom?
+<p class="lead">What better way to spend a day of convalescence than converting a syntax highlighting theme from Sublime Text to Atom?</p>
 
 Don't answer that.
 
