@@ -47,4 +47,4 @@ To circumvent this particular case, I hack the line-height mixin a bit; I test w
 }
 {% endhighlight %}
 
-And with that, you can always be confident where each line begins and how much space there is between two baselines.
+And with that, you can be <small>(relatively)</small> confident  where each line begins and how much space there is between two baselines.
