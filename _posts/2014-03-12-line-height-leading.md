@@ -25,7 +25,7 @@ Another mixin (in conjunction with the one above) can kill of this pesky space w
 
 {% highlight scss %}
 @mixin font-size-and-leading($fontsize, $leading) {
-  font-size: #{$fontsize}px;;
+  font-size: #{$fontsize}px;
   $leadingcompensation: ($leading - $fontsize)/2;
   $topmargin: -($leadingcompensation);
   margin-top: #{$topmargin}px;
