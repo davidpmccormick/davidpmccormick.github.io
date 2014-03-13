@@ -142,6 +142,7 @@ a.sidebar-nav-item:focus {
   @include transition(margin-left 0.5s ease);
   padding-top:    2rem;
   padding-bottom: 4rem;
+  overflow-x: hidden;
   .lt-ie9 & {
     padding: 20px;
   }
