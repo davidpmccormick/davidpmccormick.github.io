@@ -36,6 +36,24 @@ module.exports = function(grunt) {
         }
       },
 
+      concat: {
+        dist: {
+          src: [
+          'public/js/imager.min.js',
+          'public/js/app.js'
+          ],
+          dest: 'public/js/build/production.js',
+        }
+      },
+
+      uglify: {
+        build: {
+          src: 'public/js/build/production.js',
+          dest: 'public/js/build/production.min.js'
+        }
+      },
+
+
       watch: {
         options: {
           livereload: true,
@@ -52,15 +70,25 @@ module.exports = function(grunt) {
           options: {
             spawn: false,
           }
+        },
+        js: {
+          files: ['public/js/*.js'],
+          tasks: ['concat', 'uglify'],
+          options: {
+            spawn: false
+          }
         }
       }
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-grunticon');
 
-    grunt.registerTask('default', ['sass', 'compass', 'grunticon:dmcIcons', 'watch']);
+    grunt.registerTask('icons', ['grunticon:dmcIcons']);
+    grunt.registerTask('default', ['sass', 'compass', 'concat', 'uglify', 'watch']);
 
   };
