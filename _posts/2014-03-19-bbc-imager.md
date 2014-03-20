@@ -6,11 +6,11 @@ title: Responsive images with BBC Imager
 I've not used the [full spectrum](https://docs.google.com/spreadsheet/ccc?key=0Al0lI17fOl9DdDgxTFVoRzFpV3VCdHk2NTBmdVI2OXc#gid=0) of responsive image solutions available, but [BBC Imager](https://github.com/BBC-News/Imager.js/) is pretty rad. Resize your browser to see it in action.
 
 <div>
-  <div class="delayed-image-load" data-src="http://placehold.it/{width}" data-alt="alternative text"></div>
+  <div class="delayed-image-load" data-src="public/assets/images/140319/{width}/blinky{pixel_ratio}.png" data-alt="PacMan ghost"></div>
 </div>
 
 <script>
-  new Imager({ availableWidths: [200, 400, 600, 800, 1000] });
+  new Imager({ availableWidths: [200, 400, 800], availablePixelRatios: [1, 2] });
 </script>
 
 Add an element with a `delayed-image-load` class, that has a `data-src` attribute containing a path to the image. Imager gives you a `{width}` placeholder, the value of which will be swapped out with the closest upper size available in the `availableWidths` array.
@@ -25,7 +25,7 @@ Then create a new `Imager` object, and populate its `availableWidths` property w
 
 {% highlight html %}
 <script>
-  new Imager({ availableWidths: [200, 400, 600, 800, 1000] });
+  new Imager({ availableWidths: [200, 400, 800] });
 </script>
 {% endhighlight %}
 
