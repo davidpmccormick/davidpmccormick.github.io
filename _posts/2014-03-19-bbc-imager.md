@@ -15,7 +15,7 @@ I've not used the [full spectrum](https://docs.google.com/spreadsheet/ccc?key=0A
 
 ##Markup
 
-To get it working, you add an element with a class of `delayed-image-load`, that has a `data-src` attribute containing a path to the image. Imager gives you a `{width}` placeholder, the value of which gets swapped out with the closest (upper) size in the `availableWidths` array you provide (shown below). You can then use this `{width}` value to reference the directories in which you store different sizes of the same responsive image.
+To get it working, you add an element with a class of `delayed-image-load`, that has a `data-src` attribute containing a path to your image. Imager gives you a `{width}` placeholder, the value of which gets swapped out with the closest (upper) size in the `availableWidths` array you provide (shown below). You can then use this `{width}` value to reference the directories in which you store different sizes of the same responsive image.
 
 {% highlight html %}
 <div>
