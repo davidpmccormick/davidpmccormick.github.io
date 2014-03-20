@@ -6,7 +6,7 @@ title: Responsive images with BBC Imager
 I've not used the [full spectrum](https://docs.google.com/spreadsheet/ccc?key=0Al0lI17fOl9DdDgxTFVoRzFpV3VCdHk2NTBmdVI2OXc#gid=0) of responsive image solutions available, but [BBC Imager](https://github.com/BBC-News/Imager.js/) is pretty rad. Resize your browser to see it in action.
 
 <div>
-  <div class="delayed-image-load" data-src="public/assets/images/140319/{width}/blinky{pixel_ratio}.png" data-alt="PacMan ghost"></div>
+  <div class="delayed-image-load" data-src="/public/assets/images/140319/{width}/blinky{pixel_ratio}.png" data-alt="PacMan ghost"></div>
 </div>
 
 <script>
