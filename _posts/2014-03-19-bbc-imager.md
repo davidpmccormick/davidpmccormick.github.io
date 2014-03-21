@@ -5,7 +5,7 @@ title: Responsive images with BBC Imager
 
 <p class="lead">I've not even come close to trying out the <a href="https://docs.google.com/spreadsheet/ccc?key=0Al0lI17fOl9DdDgxTFVoRzFpV3VCdHk2NTBmdVI2OXc#gid=0">full spectrum</a> of responsive image solutions available, but <a href="https://github.com/BBC-News/Imager.js/">BBC Imager</a> (not even mentioned in that spreadsheet) is pretty rad. Resize your browser to see it in action.
 
-<p class="lead">I probably should have used a different graphic for demonstration purposes. Deal with it.</p>
+<p class="lead">I probably should have used a different graphic for demonstration purposes. I didn't. Deal with it.</p>
 
 <figure>
   <div class="delayed-image-load" data-src="/public/assets/images/140319/{width}/blinky{pixel_ratio}.png" data-alt="PacMan ghost"></div>
