@@ -28,23 +28,23 @@ Finally, I use JavaScript to read each value from the `body:before` list (`var c
 {% highlight scss %}
 $brand-colours:
 // colour-name   base    light   dark
-primary-red    #de0011 #e05963 #b1000e,
-dark-red       #83000a #84262f #5e0009,
-black          #000000 #404040 #000000,
-white          #ffffff #ffffff #d9d9d9,
-graphite       #404040 #505050 #272727,
-pewter         #929292 #999999 #6d6d6d,
-silver         #d7d8d6 #e2e2e1 #afb0ae,
-pearl          #ededed #fdfdfd #c6c6c6,
-light-slate    #4d6474 #5a6b79 #344553,
-slate          #3e505d #4f5c66 #26323c,
-dark-slate     #253038 #3e454a #0e1215,
-jade           #00928d #34948e #0e6e68,
-dark-jade      #005e59 #2f6862 #09423c,
-gold           #e9a115 #e8a642 #c07b10,
-antique-gold   #ba8111 #b88434 #925e0e,
-violet         #37166d #5a487f #312054,
-premier-indigo #261452 #3e305d #0e0620;
+'primary-red'    #de0011 #e05963 #b1000e,
+'dark-red'       #83000a #84262f #5e0009,
+'black'          #000000 #404040 #000000,
+'white'          #ffffff #ffffff #d9d9d9,
+'graphite'       #404040 #505050 #272727,
+'pewter'         #929292 #999999 #6d6d6d,
+'silver'         #d7d8d6 #e2e2e1 #afb0ae,
+'pearl'          #ededed #fdfdfd #c6c6c6,
+'light-slate'    #4d6474 #5a6b79 #344553,
+'slate'          #3e505d #4f5c66 #26323c,
+'dark-slate'     #253038 #3e454a #0e1215,
+'jade'           #00928d #34948e #0e6e68,
+'dark-jade'      #005e59 #2f6862 #09423c,
+'gold'           #e9a115 #e8a642 #c07b10,
+'antique-gold'   #ba8111 #b88434 #925e0e,
+'violet'         #37166d #5a487f #312054,
+'premier-indigo' #261452 #3e305d #0e0620;
 
 
 // create individual lists to use with lookup function

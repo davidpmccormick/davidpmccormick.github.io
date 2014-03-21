@@ -149,14 +149,14 @@ abbr[title] {
 /* Code */
 code,
 pre {
-  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-family: "Source Code Pro", Menlo, Monaco, "Courier New", monospace;
 }
 code {
   padding: .25em .5em;
   font-size: 85%;
   color: #bf616a;
   background-color: #f9f9f9;
-  border-radius: 3px;
+  @include border-radius(3px);
 }
 pre {
   display: block;
@@ -179,10 +179,10 @@ pre code {
 }
 .highlight {
   margin-bottom: 1rem;
-  border-radius: 4px;
 }
 .highlight pre {
   margin-bottom: 0;
+  border-radius: 4px;
 }
 
 /* Quotes */
