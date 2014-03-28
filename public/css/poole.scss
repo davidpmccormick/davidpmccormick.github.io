@@ -35,6 +35,45 @@
  * Update the foundational and global aspects of the page.
  */
 
+ @-webkit-keyframes fadeline {
+  @for $i from -100 through 0 {
+    #{($i+100) * 1%} { @include background-image(linear-gradient(top, transparent 50%, transparentize($themecolour, (abs($i)/100)) 50%)); }
+  }
+}
+
+ @mixin underline($colour:$themecolour, $line-offset:1, $line-size:0.1) {
+  // @include background-image(linear-gradient(top, transparent 50%, $colour 50%));
+  background-repeat: repeat-x;
+  background-size: #{$line-size}em #{$line-size}em;
+  background-position: 0 #{$line-offset}em;
+  text-decoration: none;
+  -webkit-animation-name: fadeline;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-iteration-count:1;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-name: fadeline;
+  -moz-animation-duration: 0.7s;
+  -moz-animation-iteration-count:1;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-name: fadeline;
+  -o-animation-duration: 0.7s;
+  -o-animation-iteration-count:1;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-fill-mode: forwards;
+  animation-name: fadeline;
+  animation-duration: 0.7s;
+  animation-iteration-count:1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  .lt-ie10 & {
+    background: none;
+    text-decoration: underline;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -69,13 +108,12 @@ body {
 a {
   color: #268bd2;
   text-decoration: none;
-  @include transition(background 0.7s ease-in-out);
-
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
 a:focus {
-  text-decoration: underline;
+  @include underline();
+
 }
 
 /* Headings */
@@ -375,7 +413,9 @@ tbody tr:nth-child(odd) th {
   border: 1px solid #eee;
   background: $themecolour;
   color: #ffffff;
+  @include transition(background 0.7s ease-in-out);
 }
+
 .pagination-item:first-child {
   margin-bottom: -1px;
 }
