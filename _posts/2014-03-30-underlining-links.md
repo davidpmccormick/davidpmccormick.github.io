@@ -11,7 +11,7 @@ The post outlines six options:
 
 1. Live with the `text-decoration: underline` property as it is
 2. Use advanced underline CSS properties
-3. Use `border-box`/`box-shadow` at the bottom
+3. Use `border-bottom`/`box-shadow` at the bottom
 4. Use a bespoke underlined font
 5. Drawing with `<canvas>`
 6. Use `background-image`s with gradients
