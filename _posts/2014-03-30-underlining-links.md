@@ -42,7 +42,7 @@ This gives the underline a default colour (`$themecolour`), which can be overrid
 a:hover {
   @include underline(#aa0000);
 }
-{% endhighlight }
+{% endhighlight %}
 
 By using ems instead of pixels, we can keep the background position of the line reliably positioned beneath the text without having to know the pixel value for `font-size`. The correct `$line-offset` value will vary from typeface to typeface, but 1 em should be in the right area.
 
