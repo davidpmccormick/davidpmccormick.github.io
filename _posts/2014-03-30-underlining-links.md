@@ -18,7 +18,7 @@ The post outlines six options:
 
 Ultimately, using `background-image` in conjunction with linear-gradients, they were able to achieve their desired effect (with the exception of being able to have the underline clear the type's descenders).
 
-Here's a Sass mixin to press this technique into service:
+Here's a Sass (with Compass) mixin to press this technique into service:
 
 {% highlight scss %}
 @mixin underline($colour:$themecolour, $line-offset:1, $line-size:0.1) {
@@ -35,9 +35,16 @@ Here's a Sass mixin to press this technique into service:
 }
 {% endhighlight %}
 
-This gives the underline a default colour (`$themecolour`), which can be overridden in the mixin's first argument, e.g. `@include underline(#aa0000)`.
+<small>Note: the `.lt-ie10` declaration works with <a href="http://www.paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Paul Irish's html conditional classes trick</a>.</small>
 
-By using ems instead of pixels, we can keep the background position of the line (relatively) reliably positioned beneath the text without having to know the pixel value for `font-size`. The correct `$line-offset` value will vary from typeface to typeface, but 1 em should be in the right area.
+This gives the underline a default colour (`$themecolour`), which can be overridden in the mixin's first argument:
+{% highlight scss %}
+a:hover {
+  @include underline(#aa0000);
+}
+{% endhighlight }
+
+By using ems instead of pixels, we can keep the background position of the line reliably positioned beneath the text without having to know the pixel value for `font-size`. The correct `$line-offset` value will vary from typeface to typeface, but 1 em should be in the right area.
 
 --------
 
@@ -46,15 +53,36 @@ As I've mentioned here previously, [browsers can't transition the background-ima
 
 {% highlight scss %}
 @include keyframes(fadeline) {
+  // count up from -100 to 0, then use abs() to hack counting down
   @for $i from -100 through 0 {
+    // use * 1% instead of #{$i}%, so Sass doesn't expect a placeholder class and break
     #{($i+100) * 1%} { @include background-image(linear-gradient(top, transparent 50%, transparentize($themecolour, (abs($i)/100)) 50%)); }
   }
 }
 {% endhighlight %}
 
+This creates 100 keyframes, each with an underline slightly reduced in `$themecolour` transparency, using Sass's `transparentize()` function.
+
 With this in place, you can add `@include animation(fadeline);` (a mixin from the Compass animation plugin) to the `underline()` mixin above and have the underline fade in (but not fade out, unfortunately).
 
-I probably wouldn't recommend this, though; that `keyframes()` mixin will add > 2000 lines of CSS to your stylesheet(!) &ndash; arguably not *quite* worth it just to fade in some underlines. Of course, it doesn't need 100 steps (if you wanted to fade it in for e.g. 0.3 seconds, you could use 8 steps to keep the apparent fade perceptually smooth with a frame-rate of c. 25fps), but still, it would be hard to argue for from a performance stand-point.
+{% highlight scss %}
+@mixin underline($colour:$themecolour, $line-offset:1, $line-size:0.1) {
+  background-repeat: repeat-x;
+  background-size: #{$line-size}em #{$line-size}em;
+  background-position: 0 #{$line-offset}em;
+  text-decoration: none;
+  @include animation(fadeline);
+  // keep the background-image in here directly for browsers that don't animate
+  @include background-image(linear-gradient(top, transparent 50%, $colour 50%));
+
+  .lt-ie10 & { // because old IE can't handle it
+    background: none;
+    text-decoration: underline;
+  }
+}
+{% endhighlight %}
+
+I probably wouldn't recommend this, though; that `keyframes()` mixin will add > 2000 lines of CSS to your stylesheet(!) &ndash; arguably not *quite* worth it just to fade in some underlines. Of course, it doesn't need 100 steps (if you wanted to fade it in for e.g. 0.3 seconds, you could use 8 steps to keep the fade perceptually smooth with a frame-rate of c. 25fps), but still, it would be hard to argue that it's worthwhile from a performance stand-point. Furthermore, I couldn't get it working in anything other than Chrome and Safari.
 
 Final considerations (not problems when you're using `text-decoration: underline`) are that the `underline()` mixin will only work when applied to elements that are `display: inline` and that any padding or margins should be applied to a parent container rather than to the element itself.
 
