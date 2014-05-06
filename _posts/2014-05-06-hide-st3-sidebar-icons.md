@@ -6,7 +6,7 @@ title: Hide ST3 sidebar icons
 
 
 1. Create a [theme-name].sublime-theme file in 'packages/User/'
-2. Add the following to that file
+2. Add the following to that file:
 
 {% highlight json %}
 [
