@@ -800,7 +800,7 @@ When using the Ember Localstorage Adapter within an Ember CLI project, you can i
 
 `bower install --save-dev ember-localstorage-adapter`
 
-Then in Brocfile.js import it before `module.exports`:
+Then in `Brocfile.js`, import it before `module.exports`:
 
 {% highlight js %}
 
