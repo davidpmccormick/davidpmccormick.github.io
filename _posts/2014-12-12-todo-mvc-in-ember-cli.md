@@ -5,6 +5,8 @@ title: Todo MVC in Ember CLI
 
 <p class="lead">This post describes porting the Todo MVC application <a href="http://emberjs.com/guides/getting-started/planning-the-application/">described in the Ember guides</a> into Ember CLI. I've not gone into much detail around the Ember fundamentals -- the guides themselves will be infinitely more useful to you for that.</p>
 
+[Project code on GitHub](https://github.com/davidpmccormick/todo-mvc)
+
 ## Collect the necessary tools
 
 * Get latest version of [Node](http://www.nodejs.org)
@@ -791,3 +793,33 @@ all_are_completed: function(key, value) {
 {% endhighlight %}
 
 If it's a getter, we're not doing anything new; if it's a setter, we `setEach` item in the array to the value passed in (by way of the `#toggle-all` checkbox), then have the array `invoke` the `save` method on each of its todos.
+
+## Replace the fixture adapter with a localStorage adapter
+
+When using the Ember Localstorage Adapter within an Ember CLI project, you can install it as an addon:
+
+`bower install --save-dev ember-localstorage-adapter`
+
+Then in Brocfile.js import it before `module.exports`:
+
+{% highlight js %}
+
+app.import('bower_components/ember-localstorage-adapter/localstorage_adapter.js');
+
+module.exports = app.toTree();
+
+{% endhighlight %}
+
+Now, update `app/adapters/application.js` to use this adapter, giving it a sensible namespace:
+
+{% highlight js %}
+
+import DS from 'ember-data';
+
+export default DS.LSAdapter.extend({
+  namespace: 'todos-emberjs'
+});
+
+{% endhighlight %}
+
+Now, todos created, deleted and updated, will be preserved in the browser's localStorage, across page refreshes.
