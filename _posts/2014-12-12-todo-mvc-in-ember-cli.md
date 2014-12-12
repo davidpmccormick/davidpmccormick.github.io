@@ -3,7 +3,7 @@ layout: post
 title: Todo MVC in Ember CLI
 ---
 
-<p class="lead">This post describes porting the Todo MVC application [described in the Ember guides](http://emberjs.com/guides/getting-started/planning-the-application/) into Ember CLI. I've not gone into much detail around the Ember fundamentals -- the guides themselves will be infinitely more useful to you for that.</p>
+<p class="lead">This post describes porting the Todo MVC application <a href="http://emberjs.com/guides/getting-started/planning-the-application/">described in the Ember guides</a> into Ember CLI. I've not gone into much detail around the Ember fundamentals -- the guides themselves will be infinitely more useful to you for that.</p>
 
 ## Collect the necessary tools
 
