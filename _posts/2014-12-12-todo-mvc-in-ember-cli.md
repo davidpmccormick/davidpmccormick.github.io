@@ -721,7 +721,7 @@ Now, we'll add a `clearCompleted` action to the button:
 {% highlight html %}
 {% raw %}
 
-{{#if hasCompleted}}
+{{#if has_completed}}
   <button id="clear-completed" {{action "clearCompleted"}}>
     Clear completed ({{completed}})
   </button>
