@@ -355,7 +355,7 @@ Update the `<input type="checkbox">` to be an Ember helper, with the `checked` a
 {% endraw %}
 {% endhighlight %}
 
-So now, when this {% raw %}{{input}}{% endraw %} is rendered it will get the current value of the controller's is_completed property. When a user clicks this input, it will set the value of the controller's is_completed property to either true or false depending on the new checked value of the input.
+So now, when this `{% raw %}{{input}}{% endraw %}` is rendered it will get the current value of the controller's is_completed property. When a user clicks this input, it will set the value of the controller's `is_completed` property to either `true` or `false` depending on the new checked value of the input.
 
 In order to target the individual todos, rather than the whole array, we add an `itemController` to the `{% raw %}{{each}}{% endraw %}` block. This indicates which controller we want Ember to use on a per-todo basis. We say we want a `todo` `itemController`, so now we have to generate it: `ember generate controller todo --type=object`. And then we have to set up the ability to get and set the `is_completed` property:
 
