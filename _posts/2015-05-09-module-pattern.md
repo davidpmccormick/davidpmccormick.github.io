@@ -5,7 +5,7 @@ title: Module pattern
 
 <p class="lead">The module pattern allows us to keep related bits of functionality together, and provides a straightforward means to emulate privacy.</p>
 
-The key to the pattern is a self-invoking anonymous function (or immediately invoked function expression, if you prefer), which acts as a closure around the variables and functions it contains.
+The key to the pattern is a self-invoking anonymous function (also known as an 'immediately invoked function expression'). This is a function that calls itself, and as a result (owing to functional scope in JavaScript) then acts as a closure around the variables and functions it contains.
 
 This self-invoking function can then return an object containing any methods we'd like to be accessible from outside of the module.
 
