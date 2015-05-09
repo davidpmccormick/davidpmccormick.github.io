@@ -11,7 +11,7 @@ This self-invoking function can then return an object containing any methods we'
 
 Here's some pretty useless code to demonstrate the point:
 
-{% highlight JS}
+{% highlight JS %}
 var dom = (function() {
   // Private variable
   var counter = 1;
@@ -43,7 +43,7 @@ console.log(el_2.id); // "unique_id_2"
 console.log(el_3.id); // "unique_id_3"
 
 console.log(dom.counter); // undefined
-{% endhighlight }
+{% endhighlight %}
 
 The fact that the `counter` variable can't be accessed from outsode the module is a good thing. No means for modifying it was provided in the return object, so it can't accidentally be updated. This ensures the element IDs will always remain unique.
 
