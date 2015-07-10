@@ -9,9 +9,9 @@ title: Static wedge for absolute content
 
 The absolutely positioned text is taken out of document flow, so it doesn't have a bearing on the size of its containing `div` (and the background image in that element doesn't change size).
 
-To get around this, we clone the absolutely positioned element (with JavaScript) and insert it directly before that element, setting its `visibility` property to `hidden`, and adding `aria-hidden="true"` to keep it sane for screen-readers.
+To get around this, we clone the absolutely positioned element (with JavaScript) and insert it directly before that element, setting its `visibility` property to `hidden`, also adding `aria-hidden="true"` to keep it sane for screen-readers.
 
-Then the key is changing the cloned element's `position` property to be `static`, which keeps it in document flow, ensuring it is able to influence the size of its container.
+Then the key is changing the cloned element's `position` property to be `static`; this keeps it in document flow, ensuring it is able to influence the size of its container.
 
 [Here's the final result](http://output.jsbin.com/jilini/3).
 
