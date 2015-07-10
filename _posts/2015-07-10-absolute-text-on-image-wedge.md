@@ -3,7 +3,7 @@ layout: post
 title: Static wedge for absolute content
 ---
 
-<p class="lead">When I was given a design that had text absolutely positioned over an image, and I knew that I had to allow for that text to be of variable lengths, my initial conclusion was that it would be tricky to make it work with any degree of robustness in a responsive build. Then I remembered a nifty, if _slightly_ nasty trick my good buddy <a href="https://twitter.com/andypearson">Andy P III</a> slipped into my toolbelt a little while ago.</p>
+<p class="lead">When I was given a design that had text absolutely positioned over an image, and I knew that I had to allow for that text to be of variable lengths, my initial conclusion was that it would be tricky to make it work with any degree of robustness in a responsive build. Then I remembered a nifty, if <em>slightly</em> nasty trick my good buddy <a href="https://twitter.com/andypearson">Andy P III</a> slipped into my toolbelt a little while ago.</p>
 
 [Here's an illustration of the problem](http://output.jsbin.com/papiro) – if you resize your browser to be narrow, the text over the image runs off the top of the page.
 
