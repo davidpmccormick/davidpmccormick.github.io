@@ -87,4 +87,4 @@ Finally, we can use CSS animation to alter the `stroke-dashoffset` property back
 	C 2.608 1.518 2.958 0.788 3 0"/>
 </svg>
 
-[Manipulating the offset on scroll is fun, too](http://output.jsbin.com/boyevi/34)
+[Manipulating the offset on scroll is fun, too](http://output.jsbin.com/boyevi/34).
