@@ -34,3 +34,18 @@ However, the preferred width of a flex-item containing text seems to be the text
 
 To prevent this from happening, [just add `width: 0` to the flex-items](http://output.jsbin.com/muyiwi). It's then obviously up to you to handle how the text should flow, but at least the layout behaves consistently.
 
+{% highlight scss %}
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  flex: 1;
+  width: 0; // Force equal-width columns
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+{% endhighlight %}
