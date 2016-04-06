@@ -3,7 +3,7 @@ layout: post
 title: Always equal flexbox columns
 ---
 
-<p class="lead">Assigning equal <code>flex-grow</code> values to flex items will ensure those items are of equal width up to the point that their inner text content is larger than that width.</p>
+<p class="lead">Assigning equal <code>flex-grow</code> values to flex-items will ensure those items are of equal width up to the point that their inner text content is larger than that width.</p>
 
 It's pretty easy to get an [equal-width column grid layout going using flexbox](http://output.jsbin.com/ziyetaf):
 
