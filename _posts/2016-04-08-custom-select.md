@@ -3,7 +3,7 @@ layout: post
 title: Custom select boxes
 ---
 
-<p class="lead">I've often heard that it's a Very Bad Idea to try to emulate a browser's native select box using JavaScipt, so I thought I'd give it a go to see what the fuss is all about.</p>
+<p class="lead">I've often heard that it's a Very Bad Idea to try and emulate a browser's native select box using JavaScipt, so I thought I'd give it a go to see what the fuss is all about.</p>
 
 Here's a far from exhaustive list of things I found to describe how browsers seem to handle their native select boxes:
 
