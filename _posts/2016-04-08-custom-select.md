@@ -23,7 +23,7 @@ Here's a far from exhaustive list of things I found to describe how browsers see
 * A disabled select doesn't respond to events
 * A disabled optgroup has all of its child options disabled
 
-And [here's a JS Bin with my best shot](http://output.jsbin.com/jagamu).
+And [here's a JS Bin with my best shot](http://output.jsbin.com/jagamu). The styles are just for fun (i.e. don't judge me) – it's the functionality that I was interested in.
 
 I feel like I've had a fairly good run at it – I think I'm relatively close to having implemented the keyboard and mouse driven idiosyncrasies.
 
