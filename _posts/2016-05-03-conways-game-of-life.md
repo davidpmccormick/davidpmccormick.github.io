@@ -25,6 +25,12 @@ title: Conway’s Game of Life in JavaScript
   height: 15px;
 }
 
+@media (max-width: 500px) {
+  .gol__table td {
+    height: 5px;
+  }
+}
+
 .gol__table td.alive {
   background: hotpink !important;
 }
