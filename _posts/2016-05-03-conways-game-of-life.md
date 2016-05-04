@@ -23,7 +23,6 @@ title: Conway’s Game of Life in JavaScript
   padding: 0;
   background: #fff !important;
   border: 1px solid #ddd;
-  width: 50%;
 }
 
 .gol__table td:before {
@@ -379,7 +378,6 @@ var grid = buildGrid(50),
   padding: 0;
   background: #fff !important;
   border: 1px solid #ddd;
-  width: 50%;
 }
 
 .gol__table td:before {
