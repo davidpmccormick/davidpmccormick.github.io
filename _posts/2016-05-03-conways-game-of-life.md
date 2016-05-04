@@ -15,20 +15,21 @@ title: Conway’s Game of Life in JavaScript
 
 .gol__table {
   margin: 0 auto;
+  table-layout: fixed;
+  width: 100%;
 }
 
 .gol__table td {
   padding: 0;
   background: #fff !important;
   border: 1px solid #ddd;
-  width: 10px;
-  height: 15px;
+  width: 50%;
 }
 
-@media (max-width: 500px) {
-  .gol__table td {
-    height: 5px;
-  }
+.gol__table td:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
 }
 
 .gol__table td.alive {
@@ -355,11 +356,10 @@ function buildGrid(size) {
 
 var grid = buildGrid(50),
     gameOfLife = new GameOfLife(grid);
-
 {% endhighlight %}
 
-## SCSS
-{% highlight SCSS %}
+## CSS
+{% highlight CSS %}
 .gol__caption {
   text-transform: uppercase;
   font-weight: normal;
@@ -371,16 +371,24 @@ var grid = buildGrid(50),
 
 .gol__table {
   margin: 0 auto;
-
-  td {
-    border: 1px solid #ddd;
-    width: 10px;
-    height: 10px;
-
-    &.alive {
-      background: hotpink;
-    }
-  }
+  table-layout: fixed;
+  width: 100%;
 }
 
+.gol__table td {
+  padding: 0;
+  background: #fff !important;
+  border: 1px solid #ddd;
+  width: 50%;
+}
+
+.gol__table td:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.gol__table td.alive {
+  background: hotpink !important;
+}
 {% endhighlight %}
