@@ -24,7 +24,7 @@ In order to validate your hyphenated BEM selectors with Stylelint, add the BEM p
         ".*\\.lt-ie.*"
       ]
     },
-    "//...rules continue"
+    "//...rules": "continue"
   }
 }
 {% endhighlight %}
