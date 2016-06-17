@@ -86,4 +86,6 @@ I probably wouldn't recommend this, though; that `keyframes()` mixin will add > 
 
 Final considerations (not problems when you're using `text-decoration: underline`) are that the `underline()` mixin will only work when applied to elements that are `display: inline` and that any padding or margins should be applied to a parent container rather than to the element itself.
 
-Links on this blog are now rockin' Medium's technique. Thanks, Medium.
+<strike>Links on this blog are now rockin' Medium's technique. Thanks, Medium.</strike>
+
+I'm now back to good ol' `text-decoration: underline`.
