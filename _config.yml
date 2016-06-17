@@ -2,7 +2,7 @@ port: 3000
 
 # Dependencies
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 # Permalinks
 permalink: pretty
