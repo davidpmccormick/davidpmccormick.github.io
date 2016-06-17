@@ -42,20 +42,6 @@
 //   }
 // }
 
- @mixin underline($colour:$themecolour, $line-offset:1, $line-size:0.1) {
-  background-repeat: repeat-x;
-  background-size: #{$line-size}em #{$line-size}em;
-  background-position: 0 #{$line-offset}em;
-  text-decoration: none;
-  @include background-image(linear-gradient(top, transparent 50%, $colour 50%));
-  // @include animation(fadeline 0.3s ease 1 forwards);
-
-  .lt-ie10 & {
-    background: none;
-    text-decoration: underline;
-  }
-}
-
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -94,8 +80,7 @@ a {
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
 a:focus {
-  @include underline();
-
+  text-decoration: underline;
 }
 
 /* Headings */

@@ -3,9 +3,9 @@ layout: post
 title: Stylelint hyphenated BEM config
 ---
 
-<p class="lead"><a href="http://stylelint.io">Stylelint.io</a> is flavour of the Sass-linting month (replacing <a href="https://github.com/brigade/scss-lint">scss-lint</a> as my Sass linter of choice). Scss-lint caters to the Harry Roberts approved variant, calling it <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">'hyphenated BEM'</a>. There is a <a href="https://github.com/davidtheclark/stylelint-selector-bem-pattern">BEM pattern plugin</a> for Stylelint, but out of the box, it doesn't support this flavour.</p>
+<p class="lead"><a href="http://stylelint.io">Stylelint.io</a> is flavour of the Sass-linting month (replacing <a href="https://github.com/brigade/scss-lint">scss-lint</a> as the discerning bandwagon chaser's Sass linter of choice). Scss-lint caters to the Harry Roberts approved variant, calling it <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">'hyphenated BEM'</a>. There is a <a href="https://github.com/davidtheclark/stylelint-selector-bem-pattern">BEM pattern plugin</a> for Stylelint, but out of the box, it doesn't support this flavour.</p>
 
-In order to validate your hyphenated BEM selectors with Stylelint, add the BEM plugin – `npm install stylelint-selector-bem-pattern` – then add these regexes to the Stylelint plugin config:
+In order to validate your hyphenated BEM selectors with Stylelint, add the BEM plugin – `npm install stylelint-selector-bem-pattern` – and add these regexes to the Stylelint plugin `.stylelintrc` config:
 
 {% highlight json %}
 {
@@ -23,8 +23,7 @@ In order to validate your hyphenated BEM selectors with Stylelint, add the BEM p
         ".*\\.js-.*",
         ".*\\.lt-ie.*"
       ]
-    },
-    "//...rules": "continue"
+    }
   }
 }
 {% endhighlight %}

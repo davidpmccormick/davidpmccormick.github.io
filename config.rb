@@ -1,5 +1,3 @@
-require 'animation'
-
 preferred_syntax = :sass
 http_path = '/'
 css_dir = 'public/css/build'
