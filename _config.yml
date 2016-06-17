@@ -1,16 +1,15 @@
-port:             3000
+port: 3000
 
 # Dependencies
-markdown:         redcarpet
-highlighter:         pygments
+markdown: kramdown
+highlighter: pygments
 
 # Permalinks
-permalink:        pretty
+permalink: pretty
 
 # Setup
-title:            sumnoise
-
-paginate:         5
+title: sumnoise
+paginate: 5
 
 author:
   name: 'David McCormick'
