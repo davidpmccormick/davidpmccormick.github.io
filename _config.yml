@@ -14,3 +14,6 @@ paginate: 5
 author:
   name: 'David McCormick'
   email: 'david@sumnoise.com'
+
+# Gems
+gems: [jekyll-paginate]
