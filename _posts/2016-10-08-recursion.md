@@ -6,8 +6,8 @@ title: Recursion
 I've been trying to get to grips with recursion lately and I think I might be on the verge of a mini breakthrough.
 
 A recursive function must have two things:
-* A 'base case' from which it finally returns.
-* A statement in which it calls itself if the base case condition isn't met.
+- A 'base case' from which it finally returns.
+- A statement in which it calls itself if the base case condition isn't met.
 
 The function below takes `n` arguments and adds them using recursion.
 {% highlight js %}
