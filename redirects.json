@@ -1,0 +1,4 @@
+{
+  '/old/path': '/new/path',
+  '/what': '/yeah'
+}
